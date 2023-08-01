@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	height: 33vw;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	text-align: center;
+	background-color: #ffcd29;
+}
+
+img{
+	max-height: 20vw;
+}
+
+headings1{
+	width: 100%;
+	display: grid;
+    grid-gap: 8%;
+	margin-left: 8%;
+	padding-top: 0%;
+	padding-left: 0%;
+	margin-top: 0%;
+	grid-template-columns: 18% 9% 10% 6% 4% 2% 3%;
+    grid-template-rows: 70px;
+}
+
+playlist-content{
+	width: 100%;
+	display: grid;
+    grid-gap: 6%;
+	padding-top: 0%;
+	margin-left: 9%;
+	margin-top: 2%;
+	grid-template-columns: 20% 10% 12% 11% 4% 5% 3%;
+    grid-template-rows: 50px;
+}
