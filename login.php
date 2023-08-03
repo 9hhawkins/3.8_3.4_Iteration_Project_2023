@@ -16,7 +16,7 @@
 		
 		$count = mysqli_num_rows($result);
 		
-		if($count == 1 and $myusername == "Graeme" and $mypassword == "123"){
+		if($count == 1 and $myusername == "Graeme" and $mypassword == 123){
 			$_SESSION['login_user'] = $myusername;
 			$_SESSION['admin'] = "True";
 			header("location: home.php");
