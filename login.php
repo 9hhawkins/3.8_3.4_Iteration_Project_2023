@@ -18,12 +18,12 @@
 		
 		if($count == 1 and $myusername == "Graeme"){
 			$_SESSION['login_user'] = $myusername;
-			$admin = "True";
+			$_SESSION['admin'] = "True";
 			header("location: home.php");
 		} 
 		elseif($count == 1){
 			$_SESSION['login_user'] = $myusername;
-			$admin = "False";
+			$_SESSION['admin'] = "False";
 			header("location: home.php");
 		}
 		else {
