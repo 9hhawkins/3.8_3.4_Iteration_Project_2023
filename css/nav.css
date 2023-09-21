@@ -1,0 +1,123 @@
+/*nav*/
+
+nav {
+  height: 100%;
+  width: 0; /* 0 width - changes JavaScript */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(black,#5A5A5A);
+  overflow-x: hidden;
+  padding-top: 14vw;
+  transition: 0.5s;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20vw;
+  background: linear-gradient(to left,#D3D3D3,white);
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all .3s ease-in-out; 
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+  transform: scale(1.05);
+}
+
+/*Hamburger*/
+ #nav-icon{
+	width: 5vw;
+	height: 47px;
+	position: absolute;
+	top: 1vw;
+	left: 3vw;
+	margin: 3.5vw auto;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.1s ease-in-out;
+	-moz-transition: 0.1s ease-in-out;
+	-o-transition: 0.1s ease-in-out;
+	 transition: 0.1s ease-in-out;
+	 cursor: pointer;
+	 z-index:2;
+}
+
+#nav-icon.open{
+	position: fixed;
+	transition: 0.5s;
+}
+
+#nav-icon span{
+	display: block;
+	position: absolute;
+	height: 5px;
+	width: 100%;
+	background: black;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.25s ease-in-out;
+	-moz-transition: 0.25s ease-in-out;
+	-o-transition: 0.25s ease-in-out;
+	transition: 0.25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  	top: 0px;
+}
+
+#nav-icon span:nth-child(2),#nav-icon span:nth-child(3) {
+  	top: 18px;
+}
+
+#nav-icon span:nth-child(4) {
+  	top: 36px;
+}
+#nav-icon.open span{
+	background: white;
+	transition: 0.5s;
+}
+
+#nav-icon.open span:nth-child(1) {
+  	top: 18px;
+  	width: 0%;
+  	left: 50%;
+}
+
+#nav-icon.open span:nth-child(2) {
+  	-webkit-transform: rotate(45deg);
+  	-moz-transform: rotate(45deg);
+  	-o-transform: rotate(45deg);
+  	transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(3) {
+  	-webkit-transform: rotate(-45deg);
+  	-moz-transform: rotate(-45deg);
+  	-o-transform: rotate(-45deg);
+  	transform: rotate(-45deg);
+}
+
+#nav-icon.open span:nth-child(4) {
+  	top: 18px;
+  	width: 0%;
+  	left: 50%;
+}

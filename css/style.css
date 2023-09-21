@@ -7,6 +7,7 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #ffcd29;
+	min-height: 100vh;
 }
 
 .container {
@@ -29,6 +30,56 @@ h1 {
 	display: flex;
 	justify-content: right;
 	margin-right: 3vw;
+}
+
+.login span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.login span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.login:hover span {
+  padding-right: 25px;
+}
+
+.login:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.signup span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.signup span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.signup:hover span {
+  padding-right: 25px;
+}
+
+.signup:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .button-container button {

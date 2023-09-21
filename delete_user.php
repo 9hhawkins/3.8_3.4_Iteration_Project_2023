@@ -5,8 +5,10 @@
                 <meta charset = "utf-8" />
                 <title>Graeme's Music</title>
                 <link rel="stylesheet" type="text/css" href="css/style1.css">
+				<link rel="stylesheet" type="text/css" href="css/nav.css">
         </head>
         <body>
+			<?php require "admin_nav.php";?>
                 <main>
                         <div class="container"><!-- the div that holds the grid -->
 								<div class="title">
@@ -14,19 +16,20 @@
 								</div>
                                 <center><div class="content">
 									<!-- Holds the main page content -->
-										<form method="post" id="Sign Up">
-											<input type="text" name="username" placeholder="Enter user name" required/><br/>
+										<form method="post" id="Delete User">
+											<label><input type="text" name="username" placeholder="Enter user name" style="background-image: url(images/user.png);" required/></label>
+											<label><input type="text" name="password" placeholder="Enter password" style="background-image: url(images/padlock.png);" required/></label>
 											<input type="submit" value="Delete"/><br/>
 										</form>
 										<?php
 											//connect.php (tells where to connect servername, username, password, dbaseName)
 											require "91902_Assessment_HHawkins_mysqli.php";
-											print "<p>Connected to server</p>";
 
-											$UserID = $_POST['username']; 
+											$UserID = $_POST['username'];
+											$PW = $_POST['password'];
 
 											//create a variable to store sql code for the 'Add Users' query
-											$insertquery = "DELETE FROM Users WHERE `Username` = '$UserID'";
+											$insertquery = "DELETE FROM Users WHERE `Username` = '$UserID' AND `Password` = '$PW'";
 
 											if ($_SERVER["REQUEST_METHOD"] == "POST")
 												{
