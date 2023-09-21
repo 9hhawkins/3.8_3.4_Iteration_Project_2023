@@ -5,8 +5,10 @@
                 <meta charset = "utf-8" />
                 <title>Graeme's Music</title>
                 <link rel="stylesheet" type="text/css" href="css/style1.css">
+				<link rel="stylesheet" type="text/css" href="css/nav.css">
         </head>
         <body>
+			<?php require "admin_nav.php";?>
                 <main>
                         <div class="container"><!-- the div that holds the grid -->
 								<div class="title">
@@ -14,21 +16,22 @@
 								</div>
                                 <center><div class="content">
 									<!-- Holds the main page content -->
-										<form method="post" id="Sign Up">
-											<input type="text" name="password" placeholder="Enter password" required/><br/>
-											<input type="text" name="password2" placeholder="Enter password" required/><br/>
+										<form method="post" id="Update user">
+											<label><input type="text" name="username" placeholder="Enter user name" style="background-image: url(images/user.png);"/></label>
+											<label><input type="password" name="password" placeholder="Enter user password" style="background-image: url(images/padlock.png);"/></label>
+											<label><input type="password" name="password2" placeholder="Enter new password" style="background-image: url(images/padlock.png);"/></label>
 											<input type="submit" value="Update"/><br/>
 										</form>
 										<?php
 											//connect.php (tells where to connect servername, username, password, dbaseName)
 											require "91902_Assessment_HHawkins_mysqli.php";
-											print "<p>Connected to server</p>";
 
+											$username = $_POST['username'];
 											$password = $_POST['password'];
 											$newpassword = $_POST['password2'];
 
 											//create a variable to store sql code for the 'Add Users' query
-											$insertquery = "UPDATE Users SET `Password` = '$newpassword' WHERE `Password` = '$password'";
+											$insertquery = "UPDATE Users SET `Password` = '$newpassword' WHERE `Username` = '$username' AND `Password` = '$password'";
 
 											if ($_SERVER["REQUEST_METHOD"] == "POST")
 												{
